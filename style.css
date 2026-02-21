@@ -1,0 +1,211 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    color: white;
+}
+
+/* HERO SECTION */
+
+.hero {
+    height: 100vh;
+    position: relative;
+    background: url("images/background-main.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(
+            rgba(15,28,46,0.85),
+            rgba(250,218,221,0.4)
+        ),
+        url("https://www.transparenttextures.com/patterns/stardust.png");
+    background-size: cover;
+}
+
+
+
+.title {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.heart {
+    font-size: 45px;
+    color: #F6C1D1;
+    margin: 25px 0;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.countdown {
+    display: flex;
+    flex-direction: column;   /* xếp dọc */
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.countdown > div {
+    display: flex;
+    gap: 40px;
+}
+
+#countdown-label {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #FADADD;
+    text-shadow: 0 0 10px rgba(250,218,221,0.4);
+}
+
+.countdown h2 {
+    font-size: 40px;
+    color: #FADADD;
+    text-shadow: 0 0 10px rgba(250, 218, 221, 0.6);
+}
+
+.enter-btn {
+    padding: 12px 30px;
+    background: #F6C1D1;
+    color: #0F1C2E;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.enter-btn:hover {
+    background: #FADADD;
+}
+
+/* TIMELINE */
+
+.timeline {
+    background: #0F1C2E;
+    padding: 80px 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.timeline h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+
+.timeline-item {
+    background: #16263D;
+    padding: 30px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 15px;
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.milestone-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #F6C1D1;
+    color: #0F1C2E;
+    border-radius: 20px;
+    text-decoration: none;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TIMELINE CENTER LINE */
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 300px;
+    background: #F6C1D1;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item .circle {
+    width: 18px;
+    height: 18px;
+    background: #F6C1D1;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.timeline-item .content {
+    margin-top: 40px;
+    background: #16263D;
+    padding: 25px;
+    border-radius: 15px;
+    display: inline-block;
+}
+.timeline-container::before {
+    box-shadow: 0 0 10px rgba(246,193,209,0.5);
+}
